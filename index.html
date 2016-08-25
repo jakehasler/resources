@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>lp-1</title>
+    <link rel="stylesheet" href="http://learn.podium.co/rs/841-BRM-380/images/skeleton.min.css">
+    <link rel="stylesheet" href="http://learn.podium.co/rs/841-BRM-380/images/new-demo-style.css">
+  </head>
+  <body>
+    <div class="section hero to-blur">
+  <div class="nav">
+    <div id="logo" class="logo">
+        <img src="http://learn.podium.co/rs/841-BRM-380/images/top-left-podium-logo1.png" alt="" />
+    </div>
+  </div>
+  <div class="container main">
+    <h2>
+    Collect and manage real-time customer feedback and reviews.
+    </h2>
+    <img id="demo" src="http://learn.podium.co/rs/841-BRM-380/images/watch-our-2-minute-demo.png">
+    </img>
+  </div>
+</div>
+<div class="container sub to-blur">
+  <div class="row content">
+    <div class="eight columns">
+      <h3>See a quick demo about how Podium works <span><img src="http://learn.podium.co/rs/841-BRM-380/images/green-arrow.png" alt="" /></span></h3>
+      <ul class="value-props">
+        <li>Collect <strong>hundreds of reviews</strong> form your customers via their mobile devices.</li>
+        <li>Manage, report on, and <strong>respond to</strong> all of your online reviews.</li>
+        <li>See in-depth analytics on reviews from <strong>over 20 different</strong> review sites.</li>
+        <li>Get <strong>real-time alerts</strong> when new reviews go live.</li>
+      </ul>
+    </div>
+    <div id="phone" class="four columns">
+      <img src="http://learn.podium.co/rs/841-BRM-380/images/iPhone%206S%20Silver%206%20-%20side%20right2.png" alt="" />
+    </div>
+  </div>
+</div>
+<div class="line to-blur"></div>
+<div class="container social-proof to-blur">
+  <h3>Podium is trusted by <strong>3,000</strong> and counting</h3>
+  <div class="row logos">
+    <img id="vivint" src="http://learn.podium.co/rs/841-BRM-380/images/vivint-logo.png" alt="" />
+    <img id="dental" src="http://learn.podium.co/rs/841-BRM-380/images/dental-one-logo.png" alt="" />
+    <img src="http://learn.podium.co/rs/841-BRM-380/images/ken-garff-logo.png" alt="" />
+  </div>
+</div>
+<div class="section video to-blur">
+  <img id="play" src="http://learn.podium.co/rs/841-BRM-380/images/play-button-1.png" alt="" />
+</div>
+<div class="section footer to-blur">
+  <div class="line to-blur"></div>
+  <div class="foot">
+    <div class="logo">
+      <img src="http://learn.podium.co/rs/841-BRM-380/images/bottom-left-podium-logo1.png" alt="" />
+    </div>
+  </div>
+</div>
+<div id="form-box" class="hidden">
+  <h5>Watch our 2-minute demo</h5>
+  <form id="mktoForm_1098"></form>
+  <!-- <form action="">
+    <input type="text" placeholder="First Name" />
+    <input type="text" placeholder="Last Name" />
+    <input type="text" placeholder="Company Name" />
+    <input type="text" placeholder="Email" />
+    <input type="text" placeholder="Phone" />
+    <button id="submit" type="submit">Watch Demo</button>
+  </form> -->
+</div>
+  </body>
+  <script src="https://app-ab11.marketo.com/js/forms2/js/forms2.min.js"></script>
+  <script>MktoForms2.loadForm("https://app-ab11.marketo.com", "841-BRM-380", 1098);</script>
+  <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+  <script type="text/javascript">
+    function initMap() {
+      MktoForms2.whenReady(function(form) {
+        $('.mktoAsterix').hide();
+        var places = new google.maps.places.Autocomplete(
+          document.getElementById('Company'), {
+            types: ['establishment']
+          });
+          places.addListener('place_changed', function() {
+            var place = places.getPlace();
+            $('#Company').val(place.name);
+            $("[name='Website']")[0].value = place.website;
+            $("[name='Address']")[0].value = place.formatted_address;
+            $("[name='Phone']")[0].value = place.international_phone_number;
+            $("[name='GMB_Rating__c']")[0].value = place.rating;
+            $("[name='GMB_Industry__c']")[0].value = place.types[0];
+            $("[name='GMB_URL__c']")[0].value = place.url;
+          });
+        });
+    }
+  </script>
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDcImaSd5we-VhOKzGaqT4lw6TOgH3gl7Y&libraries=places&callback=initMap"></script>
+  <script src="index.js" charset="utf-8"></script>
+  <script>
+    document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] +
+    ':35729/livereload.js?snipver=1"></' + 'script>')
+  </script>
+</html>
