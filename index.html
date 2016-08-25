@@ -74,6 +74,24 @@
   <script>MktoForms2.loadForm("https://app-ab11.marketo.com", "841-BRM-380", 1098);</script>
   <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
   <script type="text/javascript">
+    function toggleForm() {
+      $('#form-box').toggleClass('hidden');
+      $('.to-blur').toggleClass('blurred');
+    }
+
+    $('#demo').on('click', toggleForm);
+    $('#play').on('click', toggleForm);
+
+    $(document).mouseup(function (e){
+      var container = $('#form-box');
+      var form = $('mktoForm_1098');
+      if (!container.is(e.target) && container.has(e.target).length === 0
+        && !form.is(e.target) && form.has(e.target).length === 0) {
+          container.addClass('hidden');
+          $('.to-blur').removeClass('blurred');
+      }
+    });
+
     function initMap() {
       MktoForms2.whenReady(function(form) {
         $('.mktoAsterix').hide();
